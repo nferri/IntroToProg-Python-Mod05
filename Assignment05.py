@@ -88,7 +88,7 @@ while True:
 
             students.append(student_data)
             
-            print(f"Student {student_data["FirstName"]} {student_data["LastName"]} is registered for {student_data["CourseName"]}.\n")        
+            print(f"Student {student_data['FirstName']} {student_data['LastName']} is registered for {student_data['CourseName']}.\n")
             
         except AttributeError as e:
             print (e)  # Prints the custom message for AttributeError
@@ -106,7 +106,7 @@ while True:
 # Present the current data
     elif menu_choice == "2":
         for student in students:
-            print(f"{student["FirstName"]} {student["LastName"]} is enrolled in {student["CourseName"]} \n")
+            print(f"{student['FirstName']} {student['LastName']} is enrolled in {student['CourseName']} \n")
             # Printing logged rows in list
 
         continue
