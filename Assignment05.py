@@ -71,11 +71,11 @@ while True:
             
             student_first_name = input("Enter the student's first name in all caps: ")
             if not student_first_name.isupper():
-                raise AttributeError("Error: The first name should be in all caps.") # If name is not in all caps, error
+                raise AttributeError("Error: The first name should be in all caps.\n") # If name is not in all caps, error
 
             student_last_name = input("Enter the student's last name in all caps: ")        
             if not student_last_name.isupper():
-                raise AttributeError("Error: The last name should be in all caps.") # If name is not in all caps, error
+                raise AttributeError("Error: The last name should be in all caps.\n") # If name is not in all caps, error
 
             course_name = input("Enter course name: ") 
 
@@ -88,31 +88,25 @@ while True:
 
             students.append(student_data)
             
-            print(f"Student {student_data["FirstName"]} {student_data["LastName"]} is registered for {student_data["CourseName"]}.")        
+            print(f"Student {student_data["FirstName"]} {student_data["LastName"]} is registered for {student_data["CourseName"]}.\n")        
             
         except AttributeError as e:
-            print (" "*40)
             print (e)  # Prints the custom message for AttributeError
-            print ("-- Error Message -- ")
-            print (" "*40)
-            print ("WRITE YOUR NAME IN CAPS")
-            print (" "*40)
+            print ("-- Error Message -- \n")
+            print ("WRITE YOUR NAME IN CAPS \n")
             print (e, e.__doc__, type(e), sep='\n')
 
         except Exception as e:
-            print (" "*40)
-            print ("Error: There was a problem with your entered data.") # Prints the custom message for other errors
-            print ("Please retry")
-            print (" "*40)
+            print ("Error: There was a problem with your entered data. \n") # Prints the custom message for other errors
+            print ("Please retry \n")
             print (e, e.__doc__, type(e), sep='\n')
-            print (" "*40)
 
         continue
     
 # Present the current data
     elif menu_choice == "2":
         for student in students:
-            print(f"Student {student["FirstName"]} {student["LastName"]} is enrolled in {student["CourseName"]}")
+            print(f"{student["FirstName"]} {student["LastName"]} is enrolled in {student["CourseName"]} \n")
             # Printing logged rows in list
 
         continue
@@ -126,16 +120,13 @@ while True:
             print ("The student data has been saved.")       
         
         except TypeError as e: # TypeError message
-            print (" "*40)
-            print ("Please check that the data is a valid format")
+            print ("Please check that the data is a valid format \n")
             print ("-- Technical Error Message -- ")
             print (e, e.__doc__, type(e), sep='\n')
             
         except Exception as e: # Other error message
-            print (" "*40)
             print ("-- Error Message -- ")
             print ("Built-In Python error info: ")
-            print (" "*40)
             print (e, e.__doc__, type(e), sep='\n')
             
         finally: # Close JSON file
@@ -152,4 +143,4 @@ while True:
         print ("Please only choose option 1, 2, 3, or 4.")
 
 # Signifies end of program
-print ("Thank you for your input. Goodbye.")
+print ("Thank you for your input. Goodbye. \n")
